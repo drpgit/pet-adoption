@@ -19,13 +19,16 @@ $(document).ready(function() {
 
     if (inputtedType === "dog") {
       var imageType = "img/dog.png";
+      var extraClass = "dog";
     } else {
       var imageType = "img/cat.png";
+      var extraClass = "cat";
     }
 
     var newAdoptee = new Adoptee(inputtedName, inputtedType, inputtedBreed);
 
-    $("#animals").append("<div class='animal'>" +
+    $("#animals").append("<div class='animal available " +
+                          extraClass + "'>" +
                           "<img src='" + imageType +
                           "' alt='generic animal logo'>" +
                           "<h4>" + newAdoptee.name + "</h4>" +
@@ -39,6 +42,40 @@ $(document).ready(function() {
 
     $("input#nickname").text("");
     $("input#breed").text("");
+  });
 
+  $(".animals-all").click(function() {
+    $('.dog').css('display', 'inline');
+    $('.adopted').css('display', 'inline');
+    $('.available').css('display', 'inline');
+    $('.cat').css('display', 'inline');
+  })
+
+  $(".animals-available").click(function() {
+    $('.dog').css('display', 'inline');
+    $('.available').css('display', 'inline');
+    $('.cat').css('display', 'inline');
+    $('.adopted').css('display', 'none');
+  })
+
+  $(".animals-adopted").click(function() {
+    $('.dog').css('display', 'inline');
+    $('.adopted').css('display', 'inline');
+    $('.cat').css('display', 'inline');
+    $('.available').css('display', 'none');
+  })
+
+  $(".animals-dogs").click(function() {
+    $('.dog').css('display', 'inline');
+    $('.adopted').css('display', 'inline');
+    $('.available').css('display', 'inline');
+    $('.cat').css('display', 'none');
+  });
+
+  $(".animals-cats").click(function() {
+    $('.adopted').css('display', 'inline');
+    $('.available').css('display', 'inline');
+    $('.cat').css('display', 'inline');
+    $('.dog').css('display', 'none');
   });
 });
