@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Animal Adoption Agency</title>
+    <script src="js/jquery-3.1.1.js" charset="utf-8"></script>
+    <script src="js/scripts.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Animal Adoption Agency</h3>
+          <form id="animal-new">
+            <div class="form-group">
+              <label for="nickname">Animal's Name:</label>
+              <input type="text" id="nickname" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="dogcat">Dog or Cat:</label>
+              <select class="dogcat" name="dogcat">
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="breed">Animal's Breed:</label>
+              <input type="text" id="breed" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Add Animal</button>
+          </form>
+        </div>
+        <div class="col-md-8">
+          <h3>Animals</h3>
+          <div class="animal-buttons">
+            <button type="button" name="animals-all" class="btn btn-default animals-all">All Animals</button>
+            <button type="button" name="animals-available" class="btn btn-default animals-available">Available</button>
+            <button type="button" name="animals-adopted" class="btn btn-default animals-adopted">Adopted</button>
+          </div>
+          <div id="animals"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
