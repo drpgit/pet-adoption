@@ -40,9 +40,6 @@ $(document).ready(function() {
                           "class='btn btn-success adopt'>Adopt</button>" +
                           "</div>");
 
-    $("input#nickname").text("");
-    $("input#breed").text("");
-
     $("button.adopt").last().click(function() {
       newAdoptee.status = "Adopted";
       $(".animal-status").text(newAdoptee.status);
@@ -51,6 +48,9 @@ $(document).ready(function() {
       $(this).parent().addClass("adopted");
       $(this).parent().removeClass("available");
     });
+
+    $("#nickname").val("");
+    $("#breed").val("");
   });
 
 
