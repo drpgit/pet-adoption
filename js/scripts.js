@@ -4,7 +4,7 @@ function Adoptee(name, type, breed) {
   this.name = name;
   this.type = type;
   this.breed = breed;
-  this.status = true;
+  this.status = "Available";
 }
 
 // Front-end code goes here
@@ -34,15 +34,26 @@ $(document).ready(function() {
                           "<h4>" + newAdoptee.name + "</h4>" +
                           "<p>Breed: <span class='animal-breed'>" +
                           newAdoptee.breed + "</span></p>" +
-                          "<p>Status: <span class='animal-breed'>" +
+                          "<p>Status: <span class='animal-status'>" +
                           newAdoptee.status + "</span></p>" +
                           "<button type='button' name='adopt' " +
-                          "class='btn btn-success'>Adopt</button>" +
+                          "class='btn btn-success adopt'>Adopt</button>" +
                           "</div>");
 
     $("input#nickname").text("");
     $("input#breed").text("");
+
+    $("button.adopt").last().click(function() {
+      newAdoptee.status = "Adopted";
+      $(".animal-status").text(newAdoptee.status);
+      $(this).addClass("disabled");
+      $(this).removeClass("btn-success");
+      $(this).parent().addClass("adopted");
+      $(this).parent().removeClass("available");
+    });
   });
+
+
 
   $(".animals-all").click(function() {
     $('.dog').css('display', 'inline');

@@ -14,3 +14,7 @@
 .animal img {
   width: 128px;
 }
+
+.adopted {
+  background-color: lightgreen;
+}
