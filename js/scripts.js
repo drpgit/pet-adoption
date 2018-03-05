@@ -41,8 +41,7 @@ $(document).ready(function() {
                           "</div>");
 
     $("button.adopt").last().click(function() {
-      newAdoptee.status = "Adopted";
-      $(".animal-status").text(newAdoptee.status);
+      $(this).siblings("p").children(".animal-status").text("Adopted");
       $(this).addClass("disabled");
       $(this).removeClass("btn-success");
       $(this).parent().addClass("adopted");
